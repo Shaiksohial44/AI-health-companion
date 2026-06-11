@@ -1,0 +1,150 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediVision AI</title>
+
+  <link rel="stylesheet" href="style.scss">
+</head>
+
+<body>
+
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+  <div class="container">
+
+    <div class="sidebar">
+
+      <div class="logo">
+        🩺 MediVision AI
+      </div>
+
+      <div class="menu">
+
+        <div onclick="showSection('dashboard')">
+          Dashboard
+        </div>
+
+        <div onclick="showSection('chat')">
+          AI Chat
+        </div>
+
+        <div onclick="showSection('reportsPage')">
+          Reports
+        </div>
+
+        <div onclick="showSection('imagesPage')">
+          Medical Images
+        </div>
+
+        <div onclick="showSection('historyPage')">
+          History
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="main">
+
+      <!-- Dashboard -->
+
+      <section id="dashboard" class="page">
+
+        <h1>Dashboard</h1>
+
+        <div class="cards">
+
+          <div class="card">
+            <h2>128</h2>
+            <p>Patients</p>
+          </div>
+
+          <div class="card">
+            <h2 id="reportsCount">42</h2>
+            <p>Reports</p>
+          </div>
+
+          <div class="card">
+            <h2 id="alertCount">3</h2>
+            <p>Critical Alerts</p>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Chat -->
+
+      <section id="chat" class="page">
+
+        <h1>AI Medical Assistant</h1>
+
+        <div class="chat-box">
+
+          <div id="messages" class="messages"></div>
+
+          <div class="input-area">
+
+            <input id="question" placeholder="Ask health-related questions...">
+
+            <button onclick="startVoice()">
+              🎤
+            </button>
+
+            <button onclick="sendMessage()">
+              Send
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Reports -->
+
+      <section id="reportsPage" class="page">
+
+        <h1>Medical Reports</h1>
+
+        <textarea id="report" placeholder="Paste medical report..."></textarea>
+
+        <button class="tool-btn" onclick="summarizeReport()">
+          Summarize
+        </button>
+
+      </section>
+
+      <!-- Images -->
+
+      <section id="imagesPage" class="page">
+
+        <h1>Medical Image Upload</h1>
+
+        <input type="file" id="imageUpload" accept="image/*">
+
+        <img id="preview">
+
+      </section>
+
+      <!-- History -->
+
+      <section id="historyPage" class="page">
+
+        <h1>Patient History</h1>
+
+        <div id="historyList" class="history"></div>
+
+      </section>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
